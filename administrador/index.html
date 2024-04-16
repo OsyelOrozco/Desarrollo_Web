@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iniciar Sesion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="login.php" method="post">
+            <label for="usuario">Usuario:</label>
+            <div class="input-with-icon">
+                <i class="fas fa-user"></i>
+            <input type="text" name="usuario" pattern="[A-Za-z]+" title="Solo se permiten letras" required><br>
+            <label for="contrasena">Contraseña:</label>
+            <div class="input-with-icon">
+                <i class="fas fa-key"></i>
+            <input type="password" name="contrasena" pattern="[A-Za-z0-9]+" title="Solo se permiten letras y números" required><br>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+    </div>    
+</body>
+</html>

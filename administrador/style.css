@@ -1,5 +1,5 @@
 body {
-    background: url('imagenes/fon.jpg') no-repeat center center fixed; 
+    background: url('imag/fon.jpg') no-repeat center center fixed; 
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -10,15 +10,14 @@ body {
 
 .login-container {
     background-color: rgba(255, 255, 255, 0.856);
-    padding: 50px;
+    padding: 40px;
     font-family: Arial, sans-serif;
     border-radius: 10px;
-    width: 85%; 
-    max-width: 405px; 
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    width: 80%; 
+    max-width: 402px; 
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     height: auto; 
-
-  
+}
 
 h2 {
    text-align:center; 
@@ -30,7 +29,7 @@ label {
    display: block;
 }
 
-input[type="text"], input[type="password"],input[type="email"],input[type="tel"], select{
+input[type="text"], input[type="password"] {
    width: 90%;
    padding:12px; 
    margin-bottom :10px; 
@@ -45,7 +44,7 @@ input[type="submit"]{
      border:none ;  
      cursor:pointer ;
      display: block;
-     width: 101%;
+     width: 104%;
 }
 
 p {
@@ -59,22 +58,22 @@ a {
     text-decoration: none;
 }
 
-@media (min-width: 1200px) { /* Para PC */
+@media (min-width: 1200px) { 
     .login-container {
-        width: 80%; /* Ajustar el ancho para PC */
+        width: 80%; 
     }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) { /* Para tabletas */
+@media (min-width: 768px) and (max-width: 1199px) { 
     .login-container {
-        width: 90%; /* Ajustar el ancho para tabletas */
+        width: 90%; 
     }
 }
 
 @media (max-width: 767px) { /* Para móviles */
     .login-container {
         width: 90%; /* Ajustar el ancho para móviles */
-        height: 35vh; /* Hacer que el contenedor de inicio de sesión se alargue en móviles */
+        height: 35vh; 
     }
 }
 .input-with-icon {
@@ -89,5 +88,4 @@ a {
     position: absolute;
     left: 10px;
     top: 10px;
-  }
-}
+  } 

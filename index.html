@@ -1,44 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital San Benito</title>
+    <title>HOSPITAL</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="contenedor">
+        <img src="img/88.jpg" alt="Imagen de selección de rol" class="imagen-fondo">
+        <div class="contenido">
+            <h1>HOSPITAL SAN BENITO</h1>
+            <div class="botones">
+                <div class="button-container">
+                    <img src="img/userr.png" alt="Imagen 1">
+                    <button class="long-button" onclick="ingresarComo('administrador')">Ingresar como Administrador</button>
+                </div>
+                <div class="button-container">
+                    <img src="img/client.png" alt="Imagen 2">
+                    <button class="long-button" onclick="ingresarComo('usuario')">Ingresar como Usuario</button>
+                </div>
+                <div class="button-container">
+                    <img src="img/usuarios.png" alt="Imagen 3">
+                    <button class="long-button" onclick="ingresarComo('enfermera(o)')">Ingresar como enfermera (o)</button>
+                </div>
+                <div class="button-container">
+                    <img src="img/usuario1.png" alt="Imagen 4">
+                    <button class="long-button" onclick="ingresarComo('doctor')">Ingresar como Doctor</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <header>
-        <!-- Aquí va tu contenido de la cabecera -->
-        <h1>Header</h1>
-    </header>
-
-    <nav>
-        <!-- Aquí va tu contenido de la barra de navegación -->
-        <ul>
-            <li><a href="#">Enlace 1</a></li>
-            <li><a href="#">Enlace 2</a></li>
-            <li><a href="#">Enlace 3</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <!-- Aquí va tu contenido principal -->
-        <section>
-            <h2>Main Content</h2>
-            <p>Contenido principal aquí...</p>
-        </section>
-    </main>
-
-    <aside>
-        <!-- Aquí va tu contenido de la barra lateral -->
-        <h2>Side Bar</h2>
-        <p>Contenido de la barra lateral aquí...</p>
-    </aside>
-
-    <footer>
-        <!-- Aquí va tu contenido del pie de página -->
-        <p>Footer</p>
-    </footer>
-
+    <script src="roles.js"></script>
 </body>
 </html>
