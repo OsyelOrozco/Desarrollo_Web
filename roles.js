@@ -1,13 +1,13 @@
 // roles.js
 function ingresarComo(rol) {
     if (rol === 'administrador') {
-        window.location.href = 'administrador/index.html';
+        window.location.href = 'login/login.html';
     } else if (rol === 'usuario') {
-        window.location.href = 'user/usuario.html';
+        window.location.href = 'login/login.html';
     } else if (rol === 'enfermera(o)') {
-        window.location.href = 'enfermera/index.html';
+        window.location.href = 'login/login.html';
     } else if (rol === 'doctor') {
-        window.location.href = 'Doctor/index.html';
+        window.location.href = 'login/login.html';
     }
 }
 
