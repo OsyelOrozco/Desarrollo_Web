@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="contenedor-login">
+        <h2>Factura </h2>
+        <form id="myForm">
+            <!-- Primera fila -->
+            <div class="row">
+                <div class="column">
+                    <label for="numeroFactura">Número de factura:</label><br>
+                    <input type="text" id="numeroFactura" name="numeroFactura" readonly><br>
+                </div>
+                <div class="column">
+                    <label for="fechaEmision">Fecha de emisión:</label><br>
+                    <input type="text" id="fechaEmision" name="fechaEmision" readonly><br>
+                </div>
+            </div>
+            <!-- Segunda fila -->
+            <div class="row">
+                <div class="column">
+                    <label for="fechaVencimiento">Fecha de vencimiento:</label><br>
+                    <input type="text" id="fechaVencimiento" name="fechaVencimiento" readonly><br>
+                </div>
+                <div class="column">
+                    <label for="nombreCompleto">Nombre completo:</label><br>
+                    <input type="text" id="nombreCompleto" name="nombreCompleto"><br>
+                </div>
+            </div>
+            <!-- Tercera fila -->
+            <div class="row">
+                <div class="column">
+                    <label for="direccion">Direccion :</label><br>
+                    <input type="text" id="direccion" name="direccion"><br>
+                </div>
+                <div class="column">
+                    <label for="nit">NIT:</label><br>
+                    <input type="number" id="nit" name="nit"><br>
+                </div>
+            </div>
+            <!-- Descripción en el medio -->
+            <label for="detallesProducto">Descripción:</label><br>
+            <textarea id="detallesProducto" name="detallesProducto"></textarea><br>
+            <!-- Cuarta fila -->
+            <div class="row">
+                <div class="column">
+                    <label for="cantidad">Cantidad:</label><br>
+                    <input type="number" id="cantidad" name="cantidad"><br>
+                    <label for="descuento">Descuento:</label><br>
+                    <input type="number" id="descuento" name="descuento"><br>
+                </div>
+                <div class="column">
+                    <label for="cantidad">Precio uni.</label><br>
+                    <input type="number" id="precio" name="precio"><br>
+                    <label for="total">Total:</label><br>
+                    <input type="number" id="total" name="total" readonly><br>
+                </div>
+            </div>
+            <label for="estadoPago">Estado de pago:</label><br>
+            <select id="estadoPago" name="estadoPago">
+                <option value="pagado">Pagado</option>
+                <option value="nopagado">No pagado</option>
+            </select><br>
+            <input type="submit" value="Generar Factura">
+            <input type="submit" value="Cancelar">
+        </form>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // Verifica si ya existe un número de factura guardado, si no, comienza con 1
+            var invoiceNumber = localStorage.getItem('invoiceNumber') ? parseInt(localStorage.getItem('invoiceNumber')) : 1;
+
+            $("#myForm").on("submit", function(e){
+                e.preventDefault();
+                
+                var today = new Date();
+                var dueDate = new Date();
+                dueDate.setDate(today.getDate() + 10);
+                $("#numeroFactura").val(invoiceNumber);
+                $("#fechaEmision").val(formatDate(today));
+                $("#fechaVencimiento").val(formatDate(dueDate));
+
+                var cantidad = $("#cantidad").val();
+                var precioUnitario = $("#precio").val();
+                var descuentoPorcentaje = $("#descuento").val();
+                var subtotal = cantidad * precioUnitario;
+                var descuento = subtotal * (descuentoPorcentaje / 100);
+                var total = subtotal - descuento;
+                $("#total").val(total);
+
+                // Guarda el número de factura incrementado en localStorage
+                localStorage.setItem('invoiceNumber', invoiceNumber + 1);
+                
+                // Aquí puedes agregar el código para enviar los datos del formulario a tu servidor
+            });
+        });
+
+        function formatDate(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            return pad(day) + '/' + pad(month) + '/' + year;
+        }
+
+        function pad(n) {
+            return n<10 ? '0'+n : n;
+        }
+    </script>
+</body>
+</html>

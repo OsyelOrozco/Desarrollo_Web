@@ -1,0 +1,140 @@
+body {
+    background: url('imagenes/fon.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contenedor-login {
+    background-color: rgba(255, 255, 255, 0.856);
+    padding: 55px;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    width: 85%; 
+    max-width: 405px; 
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    height: auto; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    ;
+}
+
+h2 {
+  ; 
+   color: #333; 
+   grid-column: span 2;
+}
+
+label {
+   color: #333; 
+   display: block;
+   
+}
+
+input[type="text"], input[type="date"], input[type="number"], select, textarea {
+   width: 90%;
+   padding: 12px; 
+   margin-bottom: 18px;
+   border-radius: 5px; 
+   border: 1px solid #ccc;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#nombreCompleto, #direccion {
+    width: 230%;
+}
+
+#precio {
+    margin-top: px; /* Mueve el campo hacia arriba */
+    margin-bottom: 10px; /* Mueve el campo hacia abajo */
+}
+
+
+
+
+.column {
+    margin-right: 140px;
+}
+
+#detallesProducto {
+    width: 95%;
+    height: 45px;
+}
+
+input[type="submit"]{
+     background-color:#ff0000; 
+     color:white; 
+     padding :12px 22px ;  
+     border:none ;  
+     cursor:pointer ;
+     display: block;
+     width: %;
+     grid-column: span 2;
+     margin: 10px 0; /* Agregué un margen para separar los botones */
+}
+
+.contenedor-login input[type="button"] {
+    background-color: #00ff22; /* Cambia el color de fondo a rojo */
+}
+
+
+p {
+   
+    color: #333;
+    margin-top: 15px;
+}
+
+a {
+    color: #0fe0cf;
+    text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+    .contenedor-login {
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .contenedor-login {
+        width: 90%;
+    }
+}
+
+@media (max-width: 767px) {
+    .contenedor-login {
+        width: 90%;
+        height: auto;
+        .contenedor-login form {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input, .input-with-icon select, .input-with-icon textarea {
+    padding-left: 30px;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+}
