@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOSPITAL SAN BENITO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <input type="checkbox" id="menu">
+    <nav>
+        <label for="menu" class="menu-bar">
+            <i class="fa fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="#">Cerrar Sesión</a></li>
+        </ul>
+        <h1 class="hospital-title">HOSPITAL SAN BENITO</h1>
+    </nav>
+   
+    <div class="side-menu">
+        <center>
+            <img src="https://drive.google.com/thumbnail?id=12So_kwX64SfUCdIJYLp3VUlX1hvwK2Zs" alt="Perfil del Usuario">
+            <h2>Perfil del Usuario</h2>
+        </center>
+        <ul>
+            <li class="has-submenu">
+                <a href="javascript:void(0);"><i class="fa fa-user"></i><span>Mi Perfil</span></a>
+                <ul class="sub-menu">
+                    <li><a href="#">Submenú 1</a></li>
+                    <li><a href="#">Submenú 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-archive"></i><span>Historial Medico</span></a></li>
+            <li><a href="#"><i class="fa fa-book"></i><span>Citas Medicas</span></a></li>
+            <li><a href="#"><i class="fa fa-archive"></i><span>Mensajes</span></a></li>
+            <li><a href="#"><i class="fa fa-flask"></i><span>Resultados</span></a></li>
+            <li><a href="#"><i class="fa fa-credit-card"></i><span>Pagos</span></a></li>
+            <li><a href="#"><i class="fa fa-flask"></i><span>Servicios</span></a></li>
+            <li><a href="#"><i class="fa fa-wrench"></i><span>Soporte Tecnico</span></a></li>
+            <li><a href="#"><i class="fa fa-cog"></i><span>Configuración</span></a></li>
+            <li><a href="#" class="Logout"><span>Logout</span></a></li>
+        </ul>
+    </div>
+    <div class="data"></div>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.side-menu li.has-submenu > a');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

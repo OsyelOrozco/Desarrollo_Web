@@ -11,7 +11,8 @@
 <body>
     <div class="contenedor-login">
         <h2>Factura </h2>
-        <form id="myForm">
+        <form id="myForm" action="guardar.php" method="post">
+       
             <!-- Primera fila -->
             <div class="row">
                 <div class="column">
