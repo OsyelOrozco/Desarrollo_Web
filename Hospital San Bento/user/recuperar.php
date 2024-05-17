@@ -11,7 +11,7 @@
     <div class="login-container">
         <h2>Establecer Nueva Contraseña</h2>
         
-        <form action="user/Establecer.php" method="post">
+        <form action="Establecer.php" method="post">
             <label for="email">Correo Electrónico:</label>
             <div class="input-with-icon">
             <i class="fa-solid fa-envelope"></i>

@@ -13,7 +13,7 @@
     <p >Registrate ahora y obten acceso completo a nuestra aplicacion. </p>
 
         <h2>Registro de Usuario</h2>
-        <form action="user/Registrar.php" method="post">
+        <form action="Registrar.php" method="post">
             <label for="username">Usuario:</label>
             <div class="input-with-icon">
                 <i class="fas fa-user"></i>
@@ -22,11 +22,7 @@
             <div class="input-with-icon">
                 <i class="fas fa-key"></i>
             <input type="password" name="password" id="password" required><br>
-            <label for="confirm_password">Confirmar Contraseña:</label>
-            <div class="input-with-icon">
-                <i class="fas fa-key"></i>
             
-            <input type="password" name="confirm_password" id="confirm_password" required><br>
             <label for="email">Correo Electrónico:</label>
             <div class="input-with-icon">
             <i class="fa-solid fa-envelope"></i>
