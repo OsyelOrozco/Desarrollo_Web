@@ -1,20 +1,15 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
 
 h1 {
+    font-size: 24px;
+    color: #333;
     text-align: center;
-}
-
-#appointment-form {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .form-group {
@@ -23,78 +18,37 @@ h1 {
 
 label {
     display: block;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
 input[type="text"],
-input[type="number"],
+input[type="date"],
+input[type="time"],
 input[type="tel"],
-input[type="email"],
-select,
 textarea {
-    width: 100%;
-    padding: 10px;
+    width: calc(100% - 10px); /* Restamos el padding del ancho total */
+    padding: 5px; /* Añadimos padding */
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Esto incluye el padding y el borde en el ancho total */
 }
 
 textarea {
     resize: vertical;
 }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Estilo para el campo de fecha */
-input[type="date"] {
-    width: calc(100% - 22px); /* Ajuste para compensar el ancho del botón */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    -webkit-appearance: none; /* Eliminar estilos de plataforma en Chrome/Safari */
-    -moz-appearance: none; /* Eliminar estilos de plataforma en Firefox */
-    appearance: none; /* Eliminar estilos de plataforma en otros navegadores */
-}
-
-/* Estilo para el campo de hora */
-input[type="time"] {
-    width: calc(100% - 22px); /* Ajuste para compensar el ancho del botón */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    -webkit-appearance: none; /* Eliminar estilos de plataforma en Chrome/Safari */
-    -moz-appearance: none; /* Eliminar estilos de plataforma en Firefox */
-    appearance: none; /* Eliminar estilos de plataforma en otros navegadores */
-}
-
-/* Estilo para los botones de fecha y hora */
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="time"]::-webkit-calendar-picker-indicator {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-clear-button,
-input[type="time"]::-webkit-inner-spin-button,
-input[type="time"]::-webkit-clear-button {
-    display: none;
+button[type="submit"]:hover {
+    background-color: #45a049;
 }
