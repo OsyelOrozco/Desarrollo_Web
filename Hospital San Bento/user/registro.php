@@ -38,6 +38,7 @@
                 <option value="femenino">Femenino</option>
             </select><br>
             <input type="submit" value="Registrar">
+            <input type="button" value="Cancelar" onclick="location.href='tu-url-aqui';">
         </form>
     </div>
 </body>

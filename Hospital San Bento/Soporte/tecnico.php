@@ -31,8 +31,7 @@
             <label for="problema">Tipo de Problema:</label><br>
             <select id="problema" name="problema" required>
                 <option value="">Selecciona una opción</option>
-                <option value="inicioSesion">Problemas al iniciar sesión</option>
-                <option value="visualizacion">Problemas de visualización</option>
+               
                 <option value="rendimiento">Problemas de rendimiento</option>
                 <option value="error">Errores inesperados</option>
                 <option value="funcionalidad">Problemas de funcionalidad</option>

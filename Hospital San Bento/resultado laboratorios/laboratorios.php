@@ -51,6 +51,8 @@
             <option value="prueba1">examen de orina </option>
         </select><br>
         <input type="submit" value="Buscar">
+        <input type="button" value="Cancelar" onclick="location.href='tu-url-aqui';">
+
     </form>
 </body>
 </html>

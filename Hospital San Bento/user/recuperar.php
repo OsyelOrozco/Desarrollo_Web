@@ -26,6 +26,7 @@
             
             <input type="password" name="confirm_password" id="confirm_password" required><br>
             <input type="submit" value="Establecer Nueva Contraseña">
+            <input type="button" value="Cancelar" onclick="location.href='tu-url-aqui';">
         </form>
     </div>
 </body>
