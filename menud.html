@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú y Submenú</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <script>
+        // Guardar la fecha y hora cuando se carga la página
+        function saveLastAccess() {
+            var now = new Date();
+            var optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            var lastAccess = now.toLocaleDateString('es-ES', optionsDate) + " " + now.toLocaleTimeString('es-ES', optionsTime) + " Hrs.";
+            localStorage.setItem("lastAccess", lastAccess); // Guardar en almacenamiento local
+        }
+
+        // Mostrar la última vez que se ingresó a la página
+        function displayLastAccess() {
+            var lastAccess = localStorage.getItem("lastAccess");
+            if (lastAccess) {
+                document.getElementById("last-access").innerText = lastAccess; // Mostrar la última vez
+            } else {
+                document.getElementById("last-access").innerText = "Nunca"; // Por defecto, si no hay datos
+            }
+        }
+
+        // Configurar la fecha y la hora actuales
+        function updateDateTime() {
+            var now = new Date();
+            var optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            var date = now.toLocaleDateString('es-ES', optionsDate); // Formato de fecha
+            var time = now.toLocaleTimeString('es-ES', optionsTime) + " Hrs."; // Formato de tiempo
+            document.getElementById("current-date").innerText = date;
+            document.getElementById("current-time").innerText = time;
+        }
+
+        setInterval(updateDateTime, 1000); // Actualiza fecha y hora cada segundo
+
+        // Llamar a estas funciones cuando se carga la página
+        window.onload = function() {
+            saveLastAccess(); // Guardar el acceso actual
+            displayLastAccess(); // Mostrar la última vez que se ingresó
+        };
+
+        function toggleSubmenu() {
+            var submenu = document.getElementById("submenu");
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function navigateTo(section) {
+            console.log('Navegar a la sección:', section);
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Sección para mostrar fecha, hora actual y última vez que se ingresó -->
+    <div class="header-info">
+        <div class="current-info">
+            <span>Fecha: </span><span id="current-date"></span>
+            <br>
+            <span>Hora: </span><span id="current-time"></span>
+        </div>
+        <div class="last-access-info">
+            <span>Última vez que ingresaste a la página: </span><span id="last-access"></span>
+        </div>
+    </div>
+
+    <ul class="menu">
+        <li onclick="toggleSubmenu()">Mi perfil
+            <ul class="submenu" id="submenu">
+                <li onclick="navigateTo('Información Personal')">Información Personal</li>
+                <li onclick="navigateTo('Información de Seguro Medico')">Información de Seguro Medico</li>
+                <li onclick="navigateTo('Cambiar Foto')">Cambiar Foto</li>
+            </ul>
+        </li>
+        <li onclick="toggleSubmenu()">Historial Medico
+            <ul class="submenu">
+                <li onclick="navigateTo('Resumen de consultas anteriores')">Resumen de consultas anteriores</li>
+                <li onclick="navigateTo('Diagnósticos y tratamientos')">Diagnósticos y tratamientos</li>
+                <li onclick="navigateTo('Historial del paciente')">Historial del paciente</li>
+            </ul>
+        </li>
+        <li onclick="toggleSubmenu()">Citas Medicas
+            <ul class="submenu">
+                <li onclick="navigateTo('Agendar cita')">Agendar cita</li>
+                <li onclick="navigateTo('Citas Programadas')">Citas Programadas</li>
+                <li onclick="navigateTo('Reprogramar cita')">Reprogramar cita</li>
+                <li onclick="navigateTo('Cancelar Cita')">Cancelar Cita</li>
+                <li onclick="navigateTo('Recordatorio y notificaciones')">Recordatorio y notificaciones</li>
+            </ul>
+        </li>
+        <li onclick="toggleSubmenu()">Mensaje
+            <ul class="submenu">
+                <li onclick="navigateTo('Personal Medico')">Personal Medico</li>
+                <li onclick="navigateTo('Historial de conversación')">Historial de conversación</li>
+            </ul>
+        </li>
+        <li onclick="toggleSubmenu()">Resultado de pruebas
+            <ul class="submenu">
+                <li onclick="navigateTo('Resultados de laboratorio')">Resultados de laboratorio</li>
+                <li onclick="navigateTo('Recetas medicas')">Recetas medicas</li>
+                <li onclick="navigateTo('Recetas actuales')">Recetas actuales</li>
+            </ul>
+        </li>
+        <li onclick="toggleSubmenu()">Pagos
+            <ul class="submenu">
+                <li onclick="navigateTo('Facturas Pendientes')">Facturas Pendientes</li>
+                <li onclick="navigateTo('Historial de Pagos')">Historial de Pagos</li>
+                <li onclick="navigateTo('Opciones de pago')">Opciones de pago
+                    <ul class="submenu">
+                        <li onclick="navigateTo('Tarjeta de Crédito/Debito')">Tarjeta de Crédito/Debito</li>
+                        <li onclick="navigateTo('Transacción bancaria')">Transacción bancaria</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li onclick="toggleSubmenu()">Servicios
+            <ul class="submenu">
+                <li onclick="navigateTo('Rayos X')">Rayos X</li>
+                <li onclick="navigateTo('Mamografías')">Mamografías</li>
+                <li onclick="navigateTo('Ultrasonidos')">Ultrasonidos</li>
+                <li onclick="navigateTo('Resonancia Magnética')">Resonancia Magnética</li>
+            </ul>
+        </li>
+        <li onclick="toggleSubmenu()">Configuración
+            <ul class="submenu">
+                <li onclick="navigateTo('Cambiar Contraseña')">Cambiar Contraseña</li>
+                <li onclick="navigateTo('Backup')">Backup</li>
+                <li onclick="navigateTo('Idiomas')">Idiomas</li>
+            </ul>
+        </li>
+        <li onclick="navigateTo('Cerrar Sesión')">Cerrar Sesión</li>
+        <li onclick="toggleSubmenu()">Ayuda
+            <ul class="submenu">
+                <li onclick="navigateTo('Guías del usuario')">Guías del usuario</li>
+                <li onclick="navigateTo('Soporte técnico')">Soporte técnico</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>
