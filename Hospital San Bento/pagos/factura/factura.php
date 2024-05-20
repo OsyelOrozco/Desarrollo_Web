@@ -20,14 +20,13 @@
                 </div>
                 <div class="column">
                     <label for="fechaEmision">Fecha de emisión:</label><br>
-                    <input type="text" id="fechaEmision" name="fechaEmision" readonly><br>
-                </div>
+                    <input type="text" id="fechaEmision" name="fechaEmision" placeholder="AAAA-MM-DD" ><br></div>
             </div>
             <!-- Segunda fila -->
             <div class="row">
-                <div class="column">
+            <div class="column">
                     <label for="fechaVencimiento">Fecha de vencimiento:</label><br>
-                    <input type="text" id="fechaVencimiento" name="fechaVencimiento" readonly><br>
+                    <input type="text" id="fechaVencimiento" name="fechaVencimiento"placeholder="AAAA-MM-DD" ><br>
                 </div>
                 <div class="column">
                     <label for="nombreCompleto">Nombre completo:</label><br>
@@ -109,7 +108,7 @@
             var day = date.getDate();
             var month = date.getMonth() + 1;
             var year = date.getFullYear();
-            return pad(day) + '/' + pad(month) + '/' + year;
+            return pad(year)+ '/' + pad(month) + '/' + day;
         }
 
         function pad(n) {
