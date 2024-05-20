@@ -10,9 +10,8 @@
 </head>
 <body>
     <div class="contenedor-login">
-        <h2>Factura </h2>
+        <h2>Factura</h2>
         <form id="myForm" action="guardar.php" method="post">
-       
             <!-- Primera fila -->
             <div class="row">
                 <div class="column">
@@ -32,45 +31,45 @@
                 </div>
                 <div class="column">
                     <label for="nombreCompleto">Nombre completo:</label><br>
-                    <input type="text" id="nombreCompleto" name="nombreCompleto"><br>
+                    <input type="text" id="nombreCompleto" name="nombreCompleto" required><br>
                 </div>
             </div>
             <!-- Tercera fila -->
             <div class="row">
                 <div class="column">
-                    <label for="direccion">Direccion :</label><br>
-                    <input type="text" id="direccion" name="direccion"><br>
+                    <label for="direccion">Dirección:</label><br>
+                    <input type="text" id="direccion" name="direccion" required><br>
                 </div>
                 <div class="column">
                     <label for="nit">NIT:</label><br>
-                    <input type="number" id="nit" name="nit"><br>
+                    <input type="number" id="nit" name="nit" required><br>
                 </div>
             </div>
             <!-- Descripción en el medio -->
             <label for="detallesProducto">Descripción:</label><br>
-            <textarea id="detallesProducto" name="detallesProducto"></textarea><br>
+            <textarea id="detallesProducto" name="detallesProducto" required></textarea><br>
             <!-- Cuarta fila -->
             <div class="row">
                 <div class="column">
                     <label for="cantidad">Cantidad:</label><br>
-                    <input type="number" id="cantidad" name="cantidad"><br>
-                    <label for="descuento">Descuento:</label><br>
-                    <input type="number" id="descuento" name="descuento"><br>
+                    <input type="number" id="cantidad" name="cantidad" required><br>
+                    <label for="descuento">Descuento (%):</label><br>
+                    <input type="number" id="descuento" name="descuento" required><br>
                 </div>
                 <div class="column">
-                    <label for="cantidad">Precio uni.</label><br>
-                    <input type="number" id="precio" name="precio"><br>
+                    <label for="precio">Precio uni.</label><br>
+                    <input type="number" id="precio" name="precio" required><br>
                     <label for="total">Total:</label><br>
                     <input type="number" id="total" name="total" readonly><br>
                 </div>
             </div>
             <label for="estadoPago">Estado de pago:</label><br>
-            <select id="estadoPago" name="estadoPago">
+            <select id="estadoPago" name="estadoPago" required>
                 <option value="pagado">Pagado</option>
                 <option value="nopagado">No pagado</option>
             </select><br>
             <input type="submit" value="Generar Factura">
-            <input type="submit" value="Cancelar">
+            <input type="button" value="Cancelar" onclick="window.location.reload();">
         </form>
     </div>
     <script>
@@ -81,6 +80,7 @@
             $("#myForm").on("submit", function(e){
                 e.preventDefault();
                 
+                // Generar fechas antes de enviar el formulario
                 var today = new Date();
                 var dueDate = new Date();
                 dueDate.setDate(today.getDate() + 10);
@@ -88,18 +88,20 @@
                 $("#fechaEmision").val(formatDate(today));
                 $("#fechaVencimiento").val(formatDate(dueDate));
 
+                // Calcular el total
                 var cantidad = $("#cantidad").val();
                 var precioUnitario = $("#precio").val();
                 var descuentoPorcentaje = $("#descuento").val();
                 var subtotal = cantidad * precioUnitario;
                 var descuento = subtotal * (descuentoPorcentaje / 100);
                 var total = subtotal - descuento;
-                $("#total").val(total);
+                $("#total").val(total.toFixed(2));
 
                 // Guarda el número de factura incrementado en localStorage
                 localStorage.setItem('invoiceNumber', invoiceNumber + 1);
                 
-                // Aquí puedes agregar el código para enviar los datos del formulario a tu servidor
+                // Enviar el formulario al servidor
+                this.submit();
             });
         });
 
@@ -111,7 +113,7 @@
         }
 
         function pad(n) {
-            return n<10 ? '0'+n : n;
+            return n < 10 ? '0' + n : n;
         }
     </script>
 </body>
