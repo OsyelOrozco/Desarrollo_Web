@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial del Paciente</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>Historial del Paciente
+            <div class="information-parents" onclick="openModal()">Medicamentos </div>
+        </header>  
+       
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Detalles</span>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <input type="text" placeholder="Buscar Paciente">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Expediente Numero">
+                        </div>
+                    </div>
+                    
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Codigo Del paciente</label>
+                            <input type="text" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nombre completo</label>
+                            <input type="text" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Genero</label>
+                            <select required>
+                                <option disabled selected>Seleccione una opcion</option>
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Edad</label>
+                            <input type="number" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Fecha de Ingreso</label>
+                            <input type="date" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Fecha de Alta</label>
+                            <input type="date" placeholder="">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Fecha de Nacimiento</label>
+                            <input type="Date" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Grupo Sanguineo</label>
+                            <input type="text" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="hora">Hora de Ingreso</label>
+                            <input type="time" placeholder="" required>
+                        </div>
+
+                        
+                        <div class="input-field">
+                            <label>Numero de Cama</label>
+                            <input type="number" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Medico A Cargo</label>
+                            <input type="text" placeholder="" required>
+                        </div>
+                        
+                        <div class="input-field diagnosis-field">
+                            <label>Diagnóstico </label>
+                            <textarea id="diagnosisInput" placeholder="" required></textarea>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Departamento</label>
+                            <select required>
+                                <option disabled selected>Seleccione una opcion</option>
+                                <option>Cirujia</option>
+                                <option>Traumatologia</option>
+                                <option>Medicina Interna</option>
+                                <option>Pediatria</option>
+                                <option>Dermatologia</option>
+                                
+                            </select>
+
+                        </div>
+                        <div class="input-field">
+                            <label>Habitacion</label>
+                            <input type="number" placeholder="" required>
+                        </div>
+                        
+
+                        
+
+                        <div class="input-field diagnosis-field">
+                            <label>Antecedentes medicos</label>
+                            <textarea id="Antecedente" placeholder="" required></textarea>
+                        </div>
+                        <div class="input-field diagnosis-field">
+                            <label>Antecedentes del Paciente</label>
+                            <textarea id="paciente" placeholder="" required></textarea>
+                        </div>
+
+                        <div class="input-field diagnosis-field">
+                            <label>Observaciones</label>
+                            <textarea id="Observaciones" placeholder="" required></textarea>
+                        </div>
+                       
+
+                    <div class="buttons">
+                        <div class="backBtn" onclick="resetDiagnosis()">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Cancelar</span>
+                        </div>
+                        
+                        <button class="submit">
+                            <span class="btnText">Actualizar</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("diagnosisInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Evita el comportamiento predeterminado de enviar el formulario
+                var input = event.target;
+                var cursorPosition = input.selectionStart;
+                var textBeforeCursor = input.value.substring(0, cursorPosition);
+                var textAfterCursor = input.value.substring(cursorPosition);
+                input.value = textBeforeCursor + "\n" + textAfterCursor;
+                // Mueve el cursor a la nueva posición después del salto de línea
+                input.selectionStart = input.selectionEnd = cursorPosition + 1;
+            }
+        });
+
+        function resetDiagnosis() {
+            document.getElementById("diagnosisInput").value = ""; // Limpiar el campo de diagnóstico
+        }
+    </script>
+</body>
+</html>

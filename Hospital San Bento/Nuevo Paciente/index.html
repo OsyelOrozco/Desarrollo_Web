@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <header>Registro del paciente
-            <div class="information-parents" onclick="openModal()">Información de los padres</div>
+            <div class="information-parents" onclick="openModal()">Mas Informacion</div>
         </header>  
        
         <form action="#">
@@ -19,6 +19,12 @@
                 <div class="details personal">
                     <span class="title">detalles</span>
 
+                    <div class="input-group">
+                        <div class="input-field">
+                            <input type="text" placeholder="Buscar Paciente">
+                        </div>
+                        
+                    </div>
                     
 
                     <div class="fields">
@@ -78,14 +84,7 @@
                                
                             </select>
                         </div>
-                        <div class="input-field">
-                            <label>Nombre del Conyugue</label>
-                            <input type="text" placeholder="" required>
-                    </div>
-                    <div class="input-field">
-                        <label>edad</label>
-                        <input type="number" placeholder="" required>
-                </div>
+                     
             </div>
             <div class="buttons">
                         <div class="backBtn">
@@ -97,7 +96,14 @@
                             <span class="btnText">Guardar</span>
                             <i class="uil uil-navigator"></i>
                         </button>
+
+                        <button class="sumbit">
+                            <span class="btnText">Eliminar</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
                     </div>
+
+
                 </div> 
             </div>
         </form>
@@ -109,27 +115,24 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
         <form id="parent-info-form">
-            <h2>Información de los padres</h2>
+            <h2>Mas Informacion</h2>
             <div class="fields">
-                <div class="input-field">
-                    <label>Nombre del padre</label>
-                    <input type="text" placeholder="" required>
+                <div class="input-field diagnosis-field">
+                    <label>Motivo de la Visita </label>
+                    <textarea id="Motivo" placeholder="" required></textarea>
                 </div>
-                <div class="input-field">
-                    <label>Nombre de la madre</label>
-                    <input type="text" placeholder="" required>
+                <div class="input-field diagnosis-field">
+                    <label>Diagnóstico </label>
+                    <textarea id="diagnosisInput" placeholder="" required></textarea>
                 </div>
-                <div class="input-field">
-                    <label>Teléfono</label>
-                    <input type="text" placeholder="" required>
+                <div class="input-field diagnosis-field">
+                    <label>Observaciones </label>
+                    <textarea id="Observaciones" placeholder="" required></textarea>
                 </div>
-                <div class="input-field">
-                    <label>Dirección</label>
-                    <input type="text" placeholder="" required>
-                </div>
+                
             </div>
             <div class="modal-buttons">
-                <button type="button" onclick="viewInfo()">Visualizar Información</button>
+                <button type="button" onclick="viewInfo()">Ver Información</button>
                 <button type="button" onclick="closeModal()">Cancelar</button>
             </div>
         </form>
