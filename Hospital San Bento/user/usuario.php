@@ -26,5 +26,7 @@
             <p>No tienes una cuenta? <a href="registro.php">Regístrate</a></p>
         </form>
     </div>
+    <script src="login.js"></script> 
 </body>
 </html>
+ c 
