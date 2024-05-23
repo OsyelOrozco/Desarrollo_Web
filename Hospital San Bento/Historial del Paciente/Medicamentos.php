@@ -24,7 +24,7 @@
                     <div class="input-group">
                         
                         <div class="input-field">
-                            <input type="text" placeholder="Expediente Numero">
+                            <input type="text" placeholder="Buscar Paciente">
                         </div>
                         <div class="input-field">
                             <input type="text" placeholder="Expediente Numero">
