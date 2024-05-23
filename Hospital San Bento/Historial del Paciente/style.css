@@ -135,23 +135,37 @@ form .fields .input-field {
 .input-field input[type="date"]:valid {
     color: #333;
 }
-
 .container form button, .backBtn {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 45px;
-    max-width: 200px;
+    max-width: 800px;
     width: 100%;
     border: none;
     outline: none;
     color: #fff;
-    border-radius: 5px;
-    margin: 25px 0;
-    background-color: #4070f4;
+    border-radius: 9px;
+    margin: 55px 0;
+   
     transition: all 0.3s linear;
     cursor: pointer;
 }
+
+/* Estilos específicos para cada botón */
+.backBtn {
+    background-color: #f44336; /* Rojo */
+    max-width: px;
+}
+
+.guardarBtn {
+    background-color: #4caf65; /* Verde */
+}
+
+.buscarBtn {
+    background-color: #2141f3; /* Azul */
+}
+
 
 .container form .btnText {
     font-size: 14px;
@@ -159,7 +173,7 @@ form .fields .input-field {
 }
 
 form button:hover {
-    background-color: #265df2;
+    background-color: #2667f2;
 }
 
 form button i,
@@ -224,6 +238,45 @@ form .buttons button, .backBtn {
     top: 0; 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para pantallas de PC */
+.container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.header-title {
+    flex: 1;
+    text-align: left;
+}
+
+/* Posiciona 'medicamentos' de manera absoluta respecto al contenedor '.container' */
+.container {
+    position: relative; /* Establece el contenedor como referencia para la posición absoluta */
+}
+
+.information-parents {
+    position: absolute;
+    right: 10px; 
+    top: 0; 
+}
+
 /* Media query para pantallas de teléfonos móviles */
 @media (max-width: 768px) {
     .information-parents {
@@ -247,13 +300,25 @@ form .buttons button, .backBtn {
     }
 }
 
-/* Media query para pantallas de teléfonos móviles */
 @media (max-width: 550px) {
     .container form .fields .input-field,
     .container form .fields > div[class^="input-field"] {
         width: 100%; /* Muestra 1 campo por fila en pantallas pequeñas */
     }
+
+    header {
+        display: flex; /* Establece el contenedor como una caja flexible */
+        flex-direction: column; /* Alinea los elementos hijos verticalmente */
+        align-items: flex-start; /* Alinea los elementos hijos a la izquierda */
+    }
+
+    .medication-info,
+    .information-parents {
+        width: 100%; /* Ocupa el ancho completo del contenedor para alineación individual */
+        margin-bottom: 10px; /* Espacio entre los elementos */
+    }
 }
+
 
 .diagnosis-field textarea {
     width: 100%; 
@@ -272,3 +337,58 @@ form .buttons button, .backBtn {
     margin-right: 0; 
 }
 
+.container {
+    position: relative; /* El contenedor debe tener una posición relativa */
+}
+
+.header-title {
+    position: absolute;
+    left: 50%; /* Centrar el título 'Historial del Paciente' */
+    transform: translateX(-60%); /* Ajustar el centrado del título */
+    white-space: nowrap; /* Asegurar que el título no se envuelva */
+}
+
+.information-parents {
+    position: absolute;
+    top: 0;
+}
+
+/* Posiciona 'Medicamentos' de manera absoluta */
+.information-parents:nth-child(2) {
+    left: calc(41.6% - 22px); /* Ajustar el porcentaje y el píxel según el ancho del texto 'Medicamentos' */
+}
+
+/* Posiciona 'Más Información' a la derecha */
+.information-parents:nth-child(3) {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    /* En pantallas más pequeñas, los elementos vuelven a su flujo normal */
+    .header-title,
+    .information-parents {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+        text-align: right; /* Alinea el texto a la derecha */
+    }
+}
+
+/* Agrega esto en tu archivo CSS o dentro de una etiqueta <style> en tu archivo HTML */
+.medicamentos {
+    cursor: pointer; /* Esto cambiará el cursor a un puntero */
+}
+
+.clickable-header {
+    cursor: pointer;
+    /* Aquí puedes añadir más estilos para personalizar tu header */
+}
+
+.informacion {
+    cursor: pointer; /* Esto cambiará el cursor a un puntero */
+}
+
+.clickable-header {
+    cursor: pointer;
+    /* Aquí puedes añadir más estilos para personalizar tu header */
+}

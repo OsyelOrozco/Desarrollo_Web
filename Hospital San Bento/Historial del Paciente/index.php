@@ -10,8 +10,10 @@
 </head>
 <body>
     <div class="container">
-        <header>Historial del Paciente
-            <div class="information-parents" onclick="openModal()">Medicamentos </div>
+        <header>
+            <header id="historialPaciente" class="clickable-header">Historial del Paciente</header>
+            <div class="medicamentos" onclick="openModal()">Medicamentos </div>
+            <div class="informacion" onclick="openMoreInfoModal()">Más Información</div>
         </header>  
        
         <form action="#">
@@ -19,11 +21,13 @@
                 <div class="details personal">
                     <span class="title">Detalles</span>
                     <div class="input-group">
+                        
                         <div class="input-field">
-                            <input type="text" placeholder="Buscar Paciente">
+                            <input type="text" placeholder="Expediente Numero">
                         </div>
                         <div class="input-field">
                             <input type="text" placeholder="Expediente Numero">
+                        </div>
                         </div>
                     </div>
                     
@@ -130,39 +134,41 @@
                         </div>
                        
 
-                    <div class="buttons">
-                        <div class="backBtn" onclick="resetDiagnosis()">
-                            <i class="uil uil-navigator"></i>
-                            <span class="btnText">Cancelar</span>
-                        </div>
+                        <div class="buttons">
+                            <div class="backBtn" onclick="resetDiagnosis()">
+                                <i class="uil uil-navigator"></i>
+                                <span class="btnText">eliminar</span>
+                            </div>
+                            
+                            <button class="submit guardarBtn">
+                                <span class="btnText">Guardar</span>
+                                <i class="uil uil-navigator"></i>
+                            </button>
                         
-                        <button class="submit">
-                            <span class="btnText">Actualizar</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
+                            <button class="submit buscarBtn">
+                                <span class="btnText">Buscar</span>
+                                <i class="uil uil-navigator"></i>
+                            </button>
+                        </div>
                     </div>
-                </div> 
+        </div>  
             </div>
         </form>
     </div>
 
     <script>
-        document.getElementById("diagnosisInput").addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault(); // Evita el comportamiento predeterminado de enviar el formulario
-                var input = event.target;
-                var cursorPosition = input.selectionStart;
-                var textBeforeCursor = input.value.substring(0, cursorPosition);
-                var textAfterCursor = input.value.substring(cursorPosition);
-                input.value = textBeforeCursor + "\n" + textAfterCursor;
-                // Mueve el cursor a la nueva posición después del salto de línea
-                input.selectionStart = input.selectionEnd = cursorPosition + 1;
-            }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Añadir evento de clic al div "information-parents" para abrir el modal de medicamentos
+            document.querySelector('.medicamentos').addEventListener('click', function() {
+                window.location.href = 'Medicamentos.php'; 
+            });
+            
+            // Añadir evento de clic al div "information-parent" para abrir el modal de más información
+            document.querySelector('.informacion').addEventListener('click', function() {
+                window.location.href = 'informacion.php'; 
+            });
         });
-
-        function resetDiagnosis() {
-            document.getElementById("diagnosisInput").value = ""; // Limpiar el campo de diagnóstico
-        }
-    </script>
+        </script>
+        
 </body>
 </html>
