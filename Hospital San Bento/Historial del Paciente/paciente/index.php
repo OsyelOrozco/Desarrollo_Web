@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial del Paciente</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div class="container">
@@ -16,36 +16,34 @@
             <div class="informacion" onclick="openMoreInfoModal()">Más Información</div>
         </header>  
        
-        <form action="#">
+        <form action="paciente.php" method="post">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Detalles</span>
                     <div class="input-group">
                         
                         <div class="input-field">
-                            <input type="text" placeholder="Buscar Paciente">
+                            <input type="text" placeholder="Buscar Paciente" id="BuscarPaciente">
                         </div>
                         <div class="input-field">
-                            <input type="text" placeholder="Expediente Numero">
+                            <input type="text" placeholder="Expediente Numero" id="ExpedienteNumero">
                         </div>
                         </div>
                     </div>
-                    
-
                     <div class="fields">
                         <div class="input-field">
                             <label>Codigo Del paciente</label>
-                            <input type="text" placeholder="" required>
+                            <input type="text" placeholder="" id="Codigo"required>
                         </div>
 
                         <div class="input-field">
                             <label>Nombre completo</label>
-                            <input type="text" placeholder="" required>
+                            <input type="text" placeholder="" id="Nombre" required>
                         </div>
 
                         <div class="input-field">
                             <label>Genero</label>
-                            <select required>
+                            <select id="Genero"required>
                                 <option disabled selected>Seleccione una opcion</option>
                                 <option>Masculino</option>
                                 <option>Femenino</option>
@@ -54,43 +52,43 @@
 
                         <div class="input-field">
                             <label>Edad</label>
-                            <input type="number" placeholder="" required>
+                            <input type="number" placeholder="" id="Edad" required>
                         </div>
 
                         <div class="input-field">
                             <label>Fecha de Ingreso</label>
-                            <input type="date" placeholder="" required>
+                            <input type="date" placeholder="" id="FechaIngreso"required>
                         </div>
 
                         <div class="input-field">
                             <label>Fecha de Alta</label>
-                            <input type="date" placeholder="">
+                            <input type="date" placeholder="" id="FechaAlta"> 
                         </div>
 
                         <div class="input-field">
                             <label>Fecha de Nacimiento</label>
-                            <input type="Date" placeholder="" required>
+                            <input type="Date" placeholder="" id="FechaNacimiento" required>
                         </div>
 
                         <div class="input-field">
                             <label>Grupo Sanguineo</label>
-                            <input type="text" placeholder="" required>
+                            <input type="text" placeholder="" id="Sangre"required>
                         </div>
 
                         <div class="input-field">
                             <label for="hora">Hora de Ingreso</label>
-                            <input type="time" placeholder="" required>
+                            <input type="time" placeholder="" id="HoraIngreso" required>
                         </div>
 
                         
                         <div class="input-field">
                             <label>Numero de Cama</label>
-                            <input type="number" placeholder="" required>
+                            <input type="number" placeholder="" id="NoCama" required>
                         </div>
 
                         <div class="input-field">
                             <label>Medico A Cargo</label>
-                            <input type="text" placeholder="" required>
+                            <input type="text" placeholder="" id="Medico" required>
                         </div>
                         
                         <div class="input-field diagnosis-field">
@@ -100,7 +98,7 @@
                         
                         <div class="input-field">
                             <label>Departamento</label>
-                            <select required>
+                            <select id="Departamento" required>
                                 <option disabled selected>Seleccione una opcion</option>
                                 <option>Cirujia</option>
                                 <option>Traumatologia</option>
@@ -113,12 +111,9 @@
                         </div>
                         <div class="input-field">
                             <label>Habitacion</label>
-                            <input type="number" placeholder="" required>
+                            <input type="number" placeholder="" id="Habitacion"required>
                         </div>
                         
-
-                        
-
                         <div class="input-field diagnosis-field">
                             <label>Antecedentes medicos</label>
                             <textarea id="Antecedente" placeholder="" required></textarea>
@@ -160,12 +155,12 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Añadir evento de clic al div "information-parents" para abrir el modal de medicamentos
             document.querySelector('.medicamentos').addEventListener('click', function() {
-                window.location.href = 'Medicamentos.php'; 
+                window.location.href = '../medicamento/Medicamentos.php'; 
             });
             
             // Añadir evento de clic al div "information-parent" para abrir el modal de más información
             document.querySelector('.informacion').addEventListener('click', function() {
-                window.location.href = 'informacion.php'; 
+                window.location.href = '../informacion/informacion.php'; 
             });
         });
         </script>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial del Paciente</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div class="container">
@@ -137,12 +137,12 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Añadir evento de clic al header "historialPaciente"
             document.getElementById('historialPaciente').addEventListener('click', function() {
-                window.location.href = 'index.php'; 
+                window.location.href = '../paciente/index.php'; 
             });
             
             // Añadir evento de clic al div "information-parents"
             document.querySelector('.medicamentos').addEventListener('click', function() {
-                window.location.href = 'Medicamentos.php'; 
+                window.location.href = '../medicamento/Medicamentos.php'; 
             });
         });
         </script>
