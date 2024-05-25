@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <header>Registro del paciente
-            <div class="information-parents" onclick="openModal()">Mas Informacion</div>
+            
         </header>  
        
         <form action="#">
@@ -109,33 +109,8 @@
         </form>
 
 
-        <!-- Modal -->
- <!-- Modal -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">×</span>
-        <form id="parent-info-form">
-            <h2>Mas Informacion</h2>
-            <div class="fields">
-                <div class="input-field diagnosis-field">
-                    <label>Motivo de la Visita </label>
-                    <textarea id="Motivo" placeholder="" required></textarea>
-                </div>
-                <div class="input-field diagnosis-field">
-                    <label>Diagnóstico </label>
-                    <textarea id="diagnosisInput" placeholder="" required></textarea>
-                </div>
-                <div class="input-field diagnosis-field">
-                    <label>Observaciones </label>
-                    <textarea id="Observaciones" placeholder="" required></textarea>
-                </div>
-                
-            </div>
-            <div class="modal-buttons">
-                <button type="button" onclick="viewInfo()">Ver Información</button>
-                <button type="button" onclick="closeModal()">Cancelar</button>
-            </div>
-        </form>
+
+    
     
 
 
@@ -144,21 +119,7 @@
     </div>
 
     <script>
-        // Función para abrir el modal
-        function openModal() {
-            document.getElementById('myModal').style.display = 'block';
-        }
-
-        // Función para cerrar el modal
-        function closeModal() {
-            document.getElementById('myModal').style.display = 'none';
-        }
-
-        // Función para manejar la visualización de la información
-        function viewInfo() {
-            // Aquí puedes agregar la lógica para visualizar la información
-            alert('Información visualizada');
-        }
+   
     </script>
     <script src="script.js"></script>
 </body>

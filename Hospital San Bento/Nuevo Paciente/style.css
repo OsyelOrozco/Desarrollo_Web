@@ -200,58 +200,7 @@ form .buttons button , .backBtn{
     }
 }
 
-/* Estilos para el modal */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-}
 
-/* Estilo para el contenido del modal */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; /* Centrado verticalmente */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Ajusta el ancho como sea necesario */
-    height: 60%; /* Ajusta la altura como sea necesario */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 10px; /* Opcional: agrega bordes redondeados */
-    overflow-y: auto; /* Agrega scroll si el contenido sobrepasa la altura */
-}
-
-/* Estilo para los botones del modal */
-.modal-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px; /* Espacio entre los botones */
-    margin-top: 20px;
-}
-
-.modal-buttons button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35px;
-    width: 48%; /* Ajusta el ancho de los botones */
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-    background-color: #4070f4;
-    transition: all 0.3s linear;
-    cursor: pointer;
-}
-
-.modal-buttons button:hover {
-    background-color: #265df2;
-}
 
 /* Media query para dispositivos con ancho máximo de 768px (típicamente dispositivos móviles) */
 @media only screen and (max-width: 768px) {
