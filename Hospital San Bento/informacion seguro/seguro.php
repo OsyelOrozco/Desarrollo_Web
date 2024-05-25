@@ -64,7 +64,8 @@
         <input type="number" id="maximoDesembolso" name="maximoDesembolso" class="input-with-icon" disabled><br>
       </div>
       
-      <input type="submit" value="Enviar">
+      <input type="submit" value="Guardar">
+      <input type="button" class="cancelar" value="Cancelar" onclick="history.back()">
     </form>
 </body>
 </html>

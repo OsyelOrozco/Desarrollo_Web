@@ -31,7 +31,8 @@
   <textarea id="details" name="details" required></textarea><br>
   <label for="email">Correo Electrónico:</label><br>
   <input type="email" id="email" name="email" required><br>
-  <input type="submit" value="Enviar">
+ <input type="submit" value="Enviar">
+      <input type="button" class="cancelar" value="Cancelar" onclick="history.back()">
 </form>
 
 </body>

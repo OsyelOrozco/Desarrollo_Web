@@ -42,14 +42,14 @@ input[type="text"], input[type="date"], input[type="number"], select, textarea {
 }
 
 input[type="submit"]{
-     background-color:#007BFF; 
-     color:white; 
-     padding :12px 22px ;  
-     border:none ;  
-     cursor:pointer ;
-     display: block;
-     width: 101%;
-     grid-column: span 2;
+    background-color: #3591dc; /* Rojo para "Cancelar" */
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    width: %; /* Mismo ancho para todos */
 }
 
 p {
@@ -109,4 +109,14 @@ table {
 td {
     width: 50%;
     padding: 0 20px;
+}
+input[type="button"].cancelar {
+    background-color: #dc3545; /* Rojo para "Cancelar" */
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    width: %; /* Mismo ancho para todos */
 }
