@@ -1,16 +1,14 @@
 <?php
 
-$server = "localhost";
+$host = "localhost";
 $user = "root";
-$pass = "";
-$db = "hospital";
+$password = "Iber2024/";
+$database = "hospital";
+$port = 3307;
 
-$conexion = new mysqli($server, $user, $pass, $db);
-
-if($conexion->connect_errno){
-    die("Conexion Fallida" . $conexion->connect_errno);
-} else{
-    echo "";
+$conexion = mysqli_connect($host, $user, $password, $database,$port);
+if(!$conexion){
+    echo "No se realizo la conexion a la base de datos, el error fue:" . mysqli_connect_error();
 }
 
 ?>
